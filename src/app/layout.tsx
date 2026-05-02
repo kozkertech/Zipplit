@@ -41,7 +41,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(generateStructuredData()) }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-white text-charcoal-gray">
+      <body className="min-h-full flex flex-col font-sans bg-white text-charcoal-gray overflow-x-hidden">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

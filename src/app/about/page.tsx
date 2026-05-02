@@ -1,13 +1,13 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { 
-  History, 
-  Target, 
-  Eye, 
-  Award, 
-  Users2, 
-  PackageCheck, 
-  Globe, 
+import {
+  History,
+  Target,
+  Eye,
+  Award,
+  Users2,
+  PackageCheck,
+  Globe,
   Leaf,
   CheckCircle2
 } from "lucide-react";
@@ -30,9 +30,9 @@ export default function AboutPage() {
       <Section variant="teal" className="pt-32 pb-24 relative overflow-hidden">
         <Container className="relative z-10">
           <div className="max-w-3xl space-y-6">
-            <Badge variant="secondary" className="px-4 py-1.5 text-sm">Our Journey</Badge>
+            <Badge className="bg-fresh-lime text-deep-teal px-4 py-1.5 text-sm font-black border-none shadow-sm">Our Journey</Badge>
             <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-tight">
-              Built for Convenience. <br /> 
+              Built for Convenience. <br />
               <span className="text-fresh-lime">Driven by Quality.</span>
             </h1>
             <p className="text-xl text-white/80 leading-relaxed max-w-2xl">
@@ -54,7 +54,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
-                <Image src="/kitchen-honest.jpg" alt="Zipplit Kitchen" fill className="object-cover opacity-90" />
+                <Image src="/assets/about/About_01.png" alt="Zipplit Kitchen" fill className="object-cover opacity-90" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-fresh-lime rounded-[3rem] -z-10 hidden md:block" />
             </div>
@@ -179,12 +179,12 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-4 h-[400px] bg-stone-gray/10 rounded-[3rem] items-center justify-center flex text-stone-gray">
-               <Users2 size={120} strokeWidth={0.5} opacity={0.2} />
+              <Users2 size={120} strokeWidth={0.5} opacity={0.2} />
             </div>
             <div className="lg:col-span-8 space-y-6">
               <SectionHeader title="The People Behind Zipplit" eyebrow="The Team" />
               <div className="space-y-4 text-stone-gray text-lg leading-relaxed italic">
-                 <p>"We're not just building a food brand; we're building a way for people to eat better without trying harder. Zipplit is our solution to the compromise we all used to make every single day."</p>
+                <p>"We're not just building a food brand; we're building a way for people to eat better without trying harder. Zipplit is our solution to the compromise we all used to make every single day."</p>
               </div>
               <div>
                 <p className="font-black text-bold-black text-xl">Zipplit Founders</p>

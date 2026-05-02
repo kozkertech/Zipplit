@@ -12,7 +12,7 @@ const tabs: FilterTab[] = [
   { id: "all", label: "All Items" },
   { id: "snacks-starters", label: "Snacks & Starters" },
   { id: "vegetarian-meal-combos", label: "Vegetarian" },
-  { id: "non-vegetarian-meal-combos", label: "Non-Vegetarian" },
+  { id: "non-vegetarian-meal-combos", label: "Non-Vegetarian Meal Combos" },
   { id: "frozen-ready-to-store", label: "Frozen" },
 ];
 

@@ -1,13 +1,35 @@
 "use client";
 
+import * as React from "react";
 import { MessageCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { buildWhatsAppURL } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 export function MobileWhatsAppCTA() {
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 lg:hidden pointer-events-none">
+    <div 
+      className={cn(
+        "fixed bottom-0 left-0 right-0 z-50 p-4 lg:hidden pointer-events-none transition-all duration-500 transform",
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+      )}
+    >
       <div className="pointer-events-auto max-w-md mx-auto">
         <Button
           variant="whatsapp"

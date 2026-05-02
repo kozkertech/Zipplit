@@ -120,7 +120,7 @@ export default function PlansPricingPage() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <Badge variant="secondary">For Businesses</Badge>
-                <h2 className="text-4xl md:text-5xl font-black leading-tight">Corporate Meal Solutions</h2>
+                <h2 className="text-4xl md:text-5xl font-black leading-tight text-white">Corporate Meal Solutions</h2>
                 <p className="text-lg text-white/70">
                   Ideal for groups that need consistent, high-quality meals in bulk (10–100+ people). Volume-based pricing and standardized menus.
                 </p>

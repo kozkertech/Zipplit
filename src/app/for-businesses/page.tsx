@@ -1,15 +1,17 @@
 import { Metadata } from "next";
-import { 
-  Building2, 
-  ChefHat, 
-  Truck, 
-  Store, 
-  UtensilsCrossed, 
+import Image from "next/image";
+import {
+  Building2,
+  ChefHat,
+  Truck,
+  Store,
+  UtensilsCrossed,
   Factory,
   CheckCircle2,
   BarChart3,
   Rocket,
-  Zap
+  Zap,
+  MessageCircle
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -31,81 +33,85 @@ export default function ForBusinessesPage() {
   return (
     <>
       {/* Hero */}
-      <Section variant="light" className="pt-32 pb-24 relative overflow-hidden">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-            <div className="space-y-8">
-              <Badge variant="primary" className="px-4 py-1.5 text-sm">Reliable Food Partner in Kochi</Badge>
-              <h1 className="text-5xl md:text-7xl font-black text-bold-black tracking-tighter leading-tight">
-                Scale Your <br /> Hospitality <br /> <span className="text-deep-teal">with Zipplit.</span>
-              </h1>
-              <p className="text-xl text-stone-gray leading-relaxed max-w-lg">
-                From hotels needing supply support to offices looking for healthy lunches and cloud kitchens seeking reliable solutions — we provide bulk sourcing and supply to keep you running.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="secondary" size="lg" className="h-16 px-10 text-lg" href="#inquiry">
-                  Partner With Us
-                </Button>
-                <Button 
-                  variant="whatsapp" 
-                  size="lg" 
-                  className="h-16 px-10 text-lg shadow-xl" 
-                  href={buildWhatsAppURL(siteConfig.whatsappMessages.business)}
-                >
-                  Chat on WhatsApp
-                </Button>
-              </div>
+      <Section variant="white" className="min-h-[80vh] flex items-start pt-4 lg:pt-0 relative overflow-hidden">
+        {/* Background Image & Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/for%20Bussiness/for_business_hero.png"
+            alt="Zipplit For Business"
+            fill
+            className="object-cover object-right brightness-[1.05] contrast-[1.02] saturate-[1.05]"
+            quality={100}
+            priority
+          />
+          {/* Subtle Overlay for Text Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent lg:from-white lg:via-white/80 lg:to-transparent z-10" />
+        </div>
 
-            </div>
-            <div className="relative aspect-square lg:aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl skew-y-3 lg:skew-y-0 lg:-rotate-3 transition-transform hover:rotate-0 duration-700">
-               <div className="absolute inset-0 bg-deep-teal/20 mix-blend-multiply" />
-               {/* Image placeholder */}
-               <div className="absolute inset-0 flex items-center justify-center bg-stone-gray/10 text-stone-gray">
-                 <Building2 size={120} strokeWidth={0.5} opacity={0.2} />
-               </div>
+        <Container className="relative z-20 h-full pt-20 pb-24">
+          <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left duration-1000">
+            <Badge className="bg-fresh-lime text-deep-teal px-4 py-1.5 text-sm font-black border-none shadow-sm">
+              Reliable Food Partner in Kochi
+            </Badge>
+            <h1 className="text-5xl md:text-7xl font-black text-bold-black tracking-tighter leading-tight">
+              Scale Your <br /> Hospitality <br /> <span className="text-deep-teal">with Zipplit.</span>
+            </h1>
+            <p className="text-xl text-stone-gray leading-relaxed max-w-lg font-semibold">
+              From hotels needing supply support to offices looking for healthy lunches and cloud kitchens seeking reliable solutions — we provide bulk sourcing and supply to keep you running.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button variant="secondary" size="lg" className="h-16 px-10 text-lg" href="#inquiry">
+                Partner With Us
+              </Button>
+              <Button
+                variant="whatsapp"
+                size="lg"
+                className="h-16 px-10 text-lg shadow-xl"
+                href={buildWhatsAppURL(siteConfig.whatsappMessages.business)}
+              >
+                <MessageCircle className="mr-2 h-6 w-6" />
+                Chat on WhatsApp
+              </Button>
             </div>
           </div>
         </Container>
-        {/* Background blobs */}
-        <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-fresh-lime/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-deep-teal/5 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2" />
       </Section>
 
       {/* Who This Is For */}
       <Section>
         <Container>
-          <SectionHeader 
-            title="Who This Is For" 
-            centered 
+          <SectionHeader
+            title="Who This Is For"
+            centered
             className="mb-16"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <BusinessCard 
+            <BusinessCard
               icon={ChefHat}
               title="Restaurants & Cafes"
               description="Supplement your fresh produce supply with consistent-quality ingredients and pre-prepared bases. Reduce prep time and wastage."
             />
-            <BusinessCard 
+            <BusinessCard
               icon={Rocket}
               title="Cloud Kitchens"
               description="Pre-marinated proteins, sauce bases, and ready-to-cook items designed to fit seamlessly into your production workflow."
             />
-            <BusinessCard 
+            {/* <BusinessCard 
               icon={Building2}
               title="Corporate Offices"
               description="Daily meal delivery for offices of all sizes. One vendor, consistent quality, reliable scheduling (10–1,000+ meals)."
-            />
-            <BusinessCard 
+            /> */}
+            <BusinessCard
               icon={Store}
               title="Supermarkets & Retail"
               description="Stock your shelves with Zipplit's preservative-free frozen range. White-label and retail-ready options available."
             />
-            <BusinessCard 
+            <BusinessCard
               icon={UtensilsCrossed}
               title="Catering Services"
               description="Supply bulk-prepared meal components and ready-to-serve dishes to caterers handling large events and functions."
             />
-            <BusinessCard 
+            <BusinessCard
               icon={Factory}
               title="Food Processing Units"
               description="Source fresh produce, dairy, and seafood in large volumes directly through Zipplit. Consistent supply, guaranteed quality."
@@ -117,9 +123,9 @@ export default function ForBusinessesPage() {
       {/* Advantage / Numbers */}
       <Section variant="teal">
         <Container>
-          <SectionHeader 
-            title="The Numbers Make Sense" 
-            inverse 
+          <SectionHeader
+            title="The Numbers Make Sense"
+            inverse
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -152,22 +158,22 @@ export default function ForBusinessesPage() {
         <Container>
           <SectionHeader title="Simple to Start. Easy to Scale." centered />
           <div className="max-w-4xl mx-auto space-y-12">
-            <B2BStep 
+            <B2BStep
               num={1}
               title="Consultation"
               description="Tell us your volume requirements and frequency. We'll design a sourcing plan around your needs."
             />
-            <B2BStep 
+            <B2BStep
               num={2}
               title="Sampling"
               description="We send you product samples for quality evaluation. Try our ingredients before committing."
             />
-            <B2BStep 
+            <B2BStep
               num={3}
               title="Integration"
               description="We integrate Zipplit's delivery schedule with your operations. Manage via WhatsApp or automated workflows."
             />
-            <B2BStep 
+            <B2BStep
               num={4}
               title="Fulfilment"
               description="Regular, reliable delivery on your agreed schedule. Consistent quality. Dedicated point of contact."
@@ -181,7 +187,7 @@ export default function ForBusinessesPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5 space-y-8">
-              <SectionHeader 
+              <SectionHeader
                 eyebrow="Partner With Us"
                 title="Ready to Optimise Your Food Supply?"
                 description="Tell us about your business and we'll get back to you within 24 hours with a tailored proposal."

@@ -20,47 +20,62 @@ export function ProductsClient() {
 
   return (
     <>
-      {/* Hero */}
-      <Section variant="light" className="pt-32 pb-16">
-        <Container>
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-black text-bold-black tracking-tighter leading-tight mb-6">
-              Fresh Meals for <br /> Every Craving.
+      {/* Hero Section */}
+      <section className="relative min-h-[80vh] flex items-start overflow-hidden bg-white pt-24">
+        {/* Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/assets/product_images/product_hero.png"
+            alt="Zipplit Product Hero"
+            className="w-full h-full object-cover object-center brightness-[0.95] pb-0"
+          />
+          {/* Subtle Left Fade for Text Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+        </div>
+
+        <Container className="relative z-20 h-full pt-12 pb-24">
+          <div className="max-w-3xl animate-in fade-in slide-in-from-left duration-1000">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-fresh-lime/10 text-deep-teal text-[10px] font-black uppercase tracking-[0.2em] border border-fresh-lime/20 mb-8">
+              <Heart size={12} className="text-deep-teal fill-deep-teal" />
+              Preservative-Free · Home-Style · Kochi
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black text-bold-black tracking-tighter leading-[1.05] mb-8">
+              Fresh Meals for <br />
+              <span className="text-deep-teal">Every Craving.</span>
             </h1>
-            <p className="text-xl text-stone-gray leading-relaxed mb-8">
+            <p className="text-xl text-stone-gray leading-relaxed mb-10 max-w-xl font-medium">
               Explore our full range of preservative-free, home-style meals. From Kerala classics to global favourites — veg, non-veg, fresh, and frozen.
             </p>
             <Button
               variant="whatsapp"
               size="lg"
-              className="h-16 px-10 text-lg shadow-xl"
+              className="h-16 px-12 rounded-full text-lg font-bold shadow-xl hover:scale-105 transition-transform"
               href={buildWhatsAppURL(siteConfig.whatsappMessages.menu)}
             >
               <MessageCircle className="mr-2 h-6 w-6" />
               Order on WhatsApp Now
             </Button>
-
           </div>
         </Container>
-      </Section>
+      </section>
 
       {/* Product List */}
       <Section>
         <Container>
-          <ProductFilters 
-            activeCategory={activeCategory} 
-            onCategoryChange={setActiveCategory} 
+          <ProductFilters
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
           />
-          
+
           <ProductGrid products={filteredProducts} />
         </Container>
       </Section>
 
       {/* Trust Builders */}
       <Section variant="light">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex flex-col gap-4">
+        <Container className="items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="flex flex-col gap-4 ">
               <div className="h-12 w-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-deep-teal">
                 <ShieldCheck size={24} />
               </div>
@@ -87,7 +102,7 @@ export function ProductsClient() {
                 Planned for balanced nutrition. Real food that your body actually benefits from.
               </p>
             </div>
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
               <div className="h-12 w-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-deep-teal">
                 <MessageCircle size={24} />
               </div>
@@ -95,13 +110,13 @@ export function ProductsClient() {
               <p className="text-sm text-stone-gray leading-relaxed">
                 We cook fresh every day. No cold storage for days. Prepared the day it arrives.
               </p>
-            </div>
+            </div> */}
           </div>
         </Container>
       </Section>
 
       {/* Ready to Order CTA */}
-      <CTASection 
+      <CTASection
         title="Ready to Order?"
         description="Preservative-free · Fresh ingredients · Delivered fast to your doorstep in Kochi."
         whatsappMessage={siteConfig.whatsappMessages.menu}

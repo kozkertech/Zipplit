@@ -69,6 +69,12 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.title}
           </h3>
         </div>
+
+        <div className="mb-3">
+          <span className="text-sm font-bold text-deep-teal/60">
+            {product.price ? `₹${product.price}` : "Currently Unavailable"}
+          </span>
+        </div>
         
         {product.description && (
           <p className="mb-4 line-clamp-2 text-sm text-stone-gray leading-relaxed">

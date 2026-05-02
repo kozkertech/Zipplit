@@ -4,14 +4,15 @@ export const siteConfig = {
   url: "https://zipplit.com", // Placeholder
   ogImage: "https://zipplit.com/og.jpg",
   links: {
-    instagram: "https://instagram.com/zipplit",
-    facebook: "https://facebook.com/zipplit",
+    instagram: "https://www.instagram.com/zipplit?igsh=N210Z25sanFybXBo",
+    facebook: "https://www.facebook.com/share/1KRWUtF8uX/",
+    linkedin: "https://www.linkedin.com/company/zipplit/",
   },
   contact: {
     email: "hello@zipplit.com",
     businessEmail: "business@zipplit.com",
-    phone: "+910000000000", // Placeholder
-    whatsapp: "+910000000000", // Placeholder
+    phone: "+91 9946466770",
+    whatsapp: "+91 9946466770",
     address: "Kochi, Kerala, India",
   },
   whatsappMessages: {

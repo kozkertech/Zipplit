@@ -66,8 +66,9 @@ export default function ContactPage() {
               <ContactCard 
                 icon={MapPin}
                 title="Our Kitchen"
-                content="Kochi, Kerala"
+                content="Kakkanad, Kochi"
                 subContent="Visit for business discussions"
+                link="https://maps.app.goo.gl/p1ovESZ83sp3wsbZ6?g_st=ac"
               />
             </div>
 
@@ -111,8 +112,17 @@ export default function ContactPage() {
 
               </div>
             </div>
-            <div className="relative aspect-[16/9] rounded-[2rem] overflow-hidden bg-stone-gray/5 border border-stone-gray/10 flex items-center justify-center text-stone-gray italic">
-               Map Visualization Placeholder
+            <div className="relative aspect-[16/9] rounded-[2rem] overflow-hidden bg-stone-gray/5 border border-stone-gray/10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.117146522538!2d76.351052!3d10.007137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d002a7b8e57%3A0x64719f96b6d8a39a!2sZipplit%20-%20Cloud%20Kitchen!5e0!3m2!1sen!2sin!4v1714545000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Zipplit Location"
+              />
             </div>
           </div>
         </Container>
